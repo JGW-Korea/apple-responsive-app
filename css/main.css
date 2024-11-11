@@ -1,0 +1,16 @@
+body {
+  /* Font 관련 CSS 속성은 상속이 되기 떄문에 Font 속성을 정의한다. */
+  font-family: "Roboto", "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  line-height: 1;
+  word-break: keep-all;
+  /* 
+  
+    word-break :
+    - nomal : 기본값 (기본 줄바꿈 규칙 사용)
+    - break-all : 한, 중, 일 텍스트를 제회한 단어 단위 줄바꿈 적용
+    - keep-all : 단어 단위 줄바꿈 (한, 중, 일 텍스트 단어 단위 줄바꿈 적용)
+    - break-word : 폐기된 속성값
+  
+  */
+}
