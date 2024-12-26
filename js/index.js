@@ -46,10 +46,14 @@ basketEl.addEventListener("click", (event) => {
 
 // 검색창 Script
 const headerEl = document.querySelector("header");
+const headerMenuEls = [...headerEl.querySelectorAll("ul.menu > li")];
+
 const searchStarterEl = headerEl.querySelector(".search-starter");
 const searchWrapEl = headerEl.querySelector(".search-wrap");
 const searchCloserEl = searchWrapEl.querySelector(".search-closer");
 const searchShadowEl = searchWrapEl.querySelector(".shadow");
+
+const searchDelayEls = [...searchWrapEl.querySelectorAll(".autocompletes li")];
 
 const headerOperation = new ElementOperation(headerEl);
 
@@ -57,14 +61,36 @@ const headerOperation = new ElementOperation(headerEl);
 searchStarterEl.addEventListener("click", () => {
   headerOperation.showElement("searching");
   document.documentElement.classList.add("fixed");
+
+  headerMenuEls.reverse().forEach((element, idx) => {
+    element.style.transitionDelay = (idx * 0.4) / headerMenuEls.length + "s";
+  });
+
+  searchDelayEls.forEach((element, idx) => {
+    element.style.transitionDelay = (idx * 0.4) / searchDelayEls.length + "s";
+  });
 });
 
 searchCloserEl.addEventListener("click", () => {
   headerOperation.hideElement("searching");
   document.documentElement.classList.remove("fixed");
+  headerMenuEls.forEach((element, idx) => {
+    element.style.transitionDelay = (idx * 0.4) / headerMenuEls.length + "s";
+  });
+
+  searchDelayEls.forEach((element, idx) => {
+    element.style.transitionDelay = (idx * 0.4) / searchDelayEls.length + "s";
+  });
 });
 
 searchShadowEl.addEventListener("click", () => {
   headerOperation.hideElement("searching");
   document.documentElement.classList.remove("fixed");
+  headerMenuEls.reverse().forEach((element, idx) => {
+    element.style.transitionDelay = (idx * 0.4) / headerMenuEls.length + "s";
+  });
+
+  searchDelayEls.toReversed().forEach((element, idx) => {
+    element.style.transitionDelay = (idx * 0.4) / searchDelayEls.length + "s";
+  });
 });

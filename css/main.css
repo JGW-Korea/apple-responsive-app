@@ -40,6 +40,7 @@ header ul.menu {
 header ul.menu > li {
   display: flex;
   position: relative;
+  transition: 0.4s;
 }
 
 header ul.menu > li > a {
@@ -80,7 +81,7 @@ header ul.menu > li a:hover {
 
 /* Header / Menu / Basket */
 header .basket {
-  /* visibility: hidden; */
+  visibility: hidden;
 
   position: absolute;
   width: 290px;
@@ -98,7 +99,7 @@ header .basket {
 }
 
 header .basket.show {
-  /* visibility: visible; */
+  visibility: visible;
   opacity: 1;
 }
 
@@ -156,11 +157,13 @@ header .basket ul li a:hover {
 
 /* Header / Search */
 header .search-wrap {
-  display: none;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.4s;
 }
 
 header .search {
@@ -250,10 +253,29 @@ header .search .autocompletes ul li:hover a {
   color: #0071e3;
 }
 
+header .search input,
+header .search .search-icon,
+header .search .autocompletes h3,
+header .search .autocompletes li {
+  transition: 0.6s;
+  transform: translateX(100px);
+}
+
 header.searching ul.menu li {
-  display: none;
+  transform: scale(0.7);
+  opacity: 0;
 }
 
 header.searching .search-wrap {
-  display: block;
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0.2s;
+}
+
+header.searching .search input,
+header.searching .search .search-icon,
+header.searching .search .autocompletes h3,
+header.searching .search .autocompletes li {
+  transform: translateX(0);
+  transition-delay: 0.2s;
 }
