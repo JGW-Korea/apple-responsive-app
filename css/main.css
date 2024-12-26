@@ -1,4 +1,12 @@
+html.fixed {
+  position: fixed;
+  overflow-y: scroll;
+  width: 100%;
+}
+
 body {
+  height: 1000px;
+
   /* Font 관련 CSS 속성은 상속이 되기 떄문에 Font 속성을 정의한다. */
   font-family: "Roboto", "Noto Sans KR", sans-serif;
   font-size: 16px;
@@ -148,6 +156,7 @@ header .basket ul li a:hover {
 
 /* Header / Search */
 header .search-wrap {
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
@@ -243,4 +252,8 @@ header .search .autocompletes ul li:hover a {
 
 header.searching ul.menu li {
   display: none;
+}
+
+header.searching .search-wrap {
+  display: block;
 }

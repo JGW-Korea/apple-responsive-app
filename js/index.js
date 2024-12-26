@@ -43,3 +43,28 @@ basketStarterEl.addEventListener("click", (event) => {
 basketEl.addEventListener("click", (event) => {
   event.stopPropagation();
 });
+
+// 검색창 Script
+const headerEl = document.querySelector("header");
+const searchStarterEl = headerEl.querySelector(".search-starter");
+const searchWrapEl = headerEl.querySelector(".search-wrap");
+const searchCloserEl = searchWrapEl.querySelector(".search-closer");
+const searchShadowEl = searchWrapEl.querySelector(".shadow");
+
+const headerOperation = new ElementOperation(headerEl);
+
+// Search Icon 이벤트 핸들러
+searchStarterEl.addEventListener("click", () => {
+  headerOperation.showElement("searching");
+  document.documentElement.classList.add("fixed");
+});
+
+searchCloserEl.addEventListener("click", () => {
+  headerOperation.hideElement("searching");
+  document.documentElement.classList.remove("fixed");
+});
+
+searchShadowEl.addEventListener("click", () => {
+  headerOperation.hideElement("searching");
+  document.documentElement.classList.remove("fixed");
+});
