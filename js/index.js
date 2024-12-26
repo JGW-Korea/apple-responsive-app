@@ -54,6 +54,9 @@ const searchCloserEl = searchWrapEl.querySelector(".search-closer");
 const searchShadowEl = searchWrapEl.querySelector(".shadow");
 
 const searchDelayEls = [...searchWrapEl.querySelectorAll(".autocompletes li")];
+const searchInputEl = searchWrapEl.querySelector(
+  ".textfield > input[type='text']"
+);
 
 const headerOperation = new ElementOperation(headerEl);
 
@@ -69,6 +72,13 @@ searchStarterEl.addEventListener("click", () => {
   searchDelayEls.forEach((element, idx) => {
     element.style.transitionDelay = (idx * 0.4) / searchDelayEls.length + "s";
   });
+
+  // Transition을 통해 아직 요소가 나오지 않았기 때문에 setTimeout을 통해 요소가 출력 된 후 포커스하게 만든다.
+  setTimeout(() => {
+    searchInputEl.focus();
+  }, 600);
+
+  console.log(searchInputEl);
 });
 
 searchCloserEl.addEventListener("click", () => {
@@ -81,6 +91,8 @@ searchCloserEl.addEventListener("click", () => {
   searchDelayEls.forEach((element, idx) => {
     element.style.transitionDelay = (idx * 0.4) / searchDelayEls.length + "s";
   });
+
+  searchInputEl.value = "";
 });
 
 searchShadowEl.addEventListener("click", () => {
@@ -93,4 +105,6 @@ searchShadowEl.addEventListener("click", () => {
   searchDelayEls.toReversed().forEach((element, idx) => {
     element.style.transitionDelay = (idx * 0.4) / searchDelayEls.length + "s";
   });
+
+  searchInputEl.value = "";
 });
