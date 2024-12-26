@@ -79,6 +79,8 @@ header ul.menu > li a:hover {
 
 /* Header / Menu / Basket */
 header .basket {
+  display: none;
+
   position: absolute;
   width: 290px;
   padding: 10px 20px;
@@ -89,6 +91,10 @@ header .basket {
 
   top: calc(100% + 4px);
   right: -6px;
+}
+
+header .basket.show {
+  display: block;
 }
 
 header .basket .arrow {
