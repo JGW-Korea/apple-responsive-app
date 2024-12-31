@@ -20,6 +20,12 @@ a {
   text-decoration: none;
 }
 
+img {
+  display: block;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
 /* Button Common Styles */
 .btn {
   display: flex;
