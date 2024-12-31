@@ -353,3 +353,43 @@ nav .menu li.active a {
 nav .menu li.active a:hover {
   color: inherit;
 }
+
+/* Hero Content */
+.hero {
+}
+
+.hero .inner {
+}
+
+.hero h1 {
+}
+
+.hero figure {
+}
+
+.hero figure img {
+}
+
+.hero figure figcaption {
+}
+
+.hero figure figcaption .caption-camera {
+}
+
+.hero figure figcaption .caption-chip {
+}
+
+.hero figure figcaption .caption-storage {
+}
+
+.hero h2 {
+}
+
+.hero .pricing {
+}
+
+.hero .description {
+}
+
+.hero .links {
+}
