@@ -93,9 +93,29 @@ a.link::after {
   content: " >";
 }
 
+/* Figures Style */
+.figures {
+  position: relative;
+}
+
+.figures figure,
+.figures figcaption {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.figures figcaption * {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 /* Header */
 header {
   background-color: #3a3a3a;
+  position: relative;
+  z-index: 9;
 }
 
 header .inner {
@@ -358,7 +378,7 @@ nav {
   border-bottom: 1px solid #d2d2d2;
   position: sticky;
   top: 0;
-  z-index: 9999; /* 페이지의 모든 요소보다 위에 쌓여야 함으로 명시적으로 최대값 설정 */
+  z-index: 8; /* 페이지의 모든 요소보다 위에 쌓여야 함으로 명시적으로 최대값 설정 */
 }
 
 nav .inner {
@@ -409,27 +429,41 @@ nav .menu li.active a:hover {
 }
 
 .hero h1 {
+  position: absolute;
   background-image: url("../assets/images/hero_ipad_text.png");
   width: 221px;
   height: 91px;
+  transform: translate(624px, 235px);
+  z-index: 1;
+}
+
+.hero .figures {
+  height: 808px;
 }
 
 .hero figure {
-}
-
-.hero figure img {
-}
-
-.hero figure figcaption {
+  transform: translate(74px, -64px);
 }
 
 .hero figure figcaption .caption-camera {
+  transform: translate(43px, 580px);
+  background-image: url("../assets/images/hero_ipad_caption_camera.png");
+  width: 120px;
+  height: 84px;
 }
 
 .hero figure figcaption .caption-chip {
+  transform: translate(589px, 510px);
+  background-image: url("../assets/images/hero_ipad_caption_chip.png");
+  width: 95px;
+  height: 43px;
 }
 
 .hero figure figcaption .caption-storage {
+  transform: translate(627px, 631px);
+  background-image: url("../assets/images/hero_ipad_caption_storage.png");
+  width: 80px;
+  height: 43px;
 }
 
 .hero h2 {
