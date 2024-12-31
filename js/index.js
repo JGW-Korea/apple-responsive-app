@@ -77,8 +77,6 @@ searchStarterEl.addEventListener("click", () => {
   setTimeout(() => {
     searchInputEl.focus();
   }, 600);
-
-  console.log(searchInputEl);
 });
 
 searchCloserEl.addEventListener("click", () => {

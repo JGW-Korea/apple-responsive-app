@@ -20,6 +20,31 @@ a {
   text-decoration: none;
 }
 
+/* Button Common Styles */
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 24px;
+  padding: 0 10px;
+  border: none;
+  border-radius: 100px;
+  outline: none;
+  font-size: 12px;
+  line-height: 1;
+  color: #fff;
+  background-color: #0071e3;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.7;
+}
+
+.btn:focus {
+  box-shadow: 0 0 0 4px #81b9f1;
+}
+
 /* Header */
 header {
   background-color: #3a3a3a;
@@ -278,4 +303,53 @@ header.searching .search .autocompletes h3,
 header.searching .search .autocompletes li {
   transform: translateX(0);
   transition-delay: 0.2s;
+}
+
+/* Navigation */
+nav {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid #d2d2d2;
+  position: sticky;
+  top: 0;
+  z-index: 9999; /* 페이지의 모든 요소보다 위에 쌓여야 함으로 명시적으로 최대값 설정 */
+}
+
+nav .inner {
+  max-width: 1000px;
+  height: 52px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+nav h1 {
+  flex-grow: 1;
+  font-size: 22px;
+  font-weight: 500;
+}
+
+nav .menu {
+  display: flex;
+  gap: 12px;
+  margin-right: 18px;
+}
+
+nav .menu li a {
+  display: block;
+  padding: 6px;
+  font-size: 11px;
+}
+
+nav .menu li a:hover {
+  color: #0071e3;
+}
+
+nav .menu li.active a {
+  opacity: 0.5;
+  cursor: default;
+}
+
+nav .menu li.active a:hover {
+  color: inherit;
 }
