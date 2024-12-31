@@ -26,6 +26,18 @@ img {
   -webkit-user-drag: none;
 }
 
+p {
+  line-height: 1.6;
+}
+
+/* Inner Common Styles */
+.inner {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+
 /* Button Common Styles */
 .btn {
   display: flex;
@@ -51,15 +63,43 @@ img {
   box-shadow: 0 0 0 4px #81b9f1;
 }
 
+/* Background-image Text Style */
+.bg-text {
+  display: block;
+  text-indent: -9999px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+/* Linkes Style */
+.links {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+a.link {
+  color: #0071e3;
+  font-size: 19px;
+  line-height: 1.3;
+}
+
+a.link:hover {
+  text-decoration: underline;
+}
+
+a.link::after {
+  content: " >";
+}
+
 /* Header */
 header {
   background-color: #3a3a3a;
 }
 
 header .inner {
-  position: relative;
   max-width: 1020px;
-  margin: 0 auto;
 }
 
 header ul.menu {
@@ -324,7 +364,6 @@ nav {
 nav .inner {
   max-width: 1000px;
   height: 52px;
-  margin: 0 auto;
   display: flex;
   align-items: center;
 }
@@ -362,12 +401,17 @@ nav .menu li.active a:hover {
 
 /* Hero Content */
 .hero {
+  background-color: #f5f5f5;
 }
 
 .hero .inner {
+  padding-bottom: 110px;
 }
 
 .hero h1 {
+  background-image: url("../assets/images/hero_ipad_text.png");
+  width: 221px;
+  height: 91px;
 }
 
 .hero figure {
@@ -389,13 +433,26 @@ nav .menu li.active a:hover {
 }
 
 .hero h2 {
+  background-image: url("../assets/images/hero_headline.png");
+  width: 738px;
+  height: 145px;
+  margin: 0 auto;
 }
 
-.hero .pricing {
+.hero p.pricing {
+  margin-top: 40px;
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
 }
 
-.hero .description {
+.hero p.description {
+  width: 88%;
+  margin: 18px auto 0;
+  font-size: 19px;
+  text-align: center;
 }
 
-.hero .links {
+.hero div.links {
+  margin-top: 30px;
 }
