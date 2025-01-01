@@ -19,7 +19,7 @@ html.fixed {
 }
 
 body {
-  height: 1000px;
+  /* height: 10000px; */
 
   /* Font 관련 CSS 속성은 상속이 되기 떄문에 Font 속성을 정의한다. */
   font-family: "Roboto", "Noto Sans KR", sans-serif;
@@ -107,8 +107,13 @@ a.link::after {
   content: " >";
 }
 
+.feature {
+  display: flex;
+}
+
 /* Figures Style */
 .figures {
+  flex-grow: 1;
   position: relative;
 }
 
@@ -123,6 +128,40 @@ a.link::after {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+/* Common Infos Styles */
+.infos {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.infos.infos--center {
+  justify-content: center;
+}
+
+.infos.infos--end {
+  justify-content: flex-end;
+}
+
+.info {
+  max-width: 330px;
+  margin-bottom: 24px;
+}
+
+.info .icon {
+  width: 100px;
+  height: 100px;
+  margin: 0 0 -15px -30px;
+  background-image: url("../assets/images/sprite_apps.png");
+}
+
+.info p {
+  font-size: 21.5px;
+  font-weight: 600;
+  line-height: 1.5;
 }
 
 /* Header */
@@ -531,26 +570,40 @@ nav .menu li.active a:hover {
 
 /* Power / Arcade */
 .power .arcade {
+  margin-top: 55px;
 }
 
 .power .arcade .figures {
+  height: 600px;
 }
 
 .power .arcade figure {
+  transform: translate(-347px, -90px);
 }
 
 .power .arcade figcaption {
+  width: 150px;
+  height: 77px;
+  background-image: url("../assets/images/power_arcade_caption.png");
+  transform: translate(483px, 653px);
 }
 
 /* Power / Create */
 .power .create {
+  margin-top: 55px;
 }
 
 .power .create .figures {
+  height: 772px;
 }
 
 .power .create figure {
+  transform: translate(-25px, 50px);
 }
 
 .power .create figcaption {
+  width: 142px;
+  height: 46px;
+  background-image: url("../assets/images/power_create_caption.png");
+  transform: translate(543px, 908px);
 }
