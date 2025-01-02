@@ -126,3 +126,23 @@ for (let i = 0; i < 60; i++) {
   // x 좌표를 계속 움직인다.
   x -= 100;
 }
+
+// Product 상품의 요소인 info가 가시성이 true일 때 보여짐 제어
+const io = new IntersectionObserver((entries) => {
+  // 관찰한 요소가 뷰포트에 노출되었을 경우에 show 클래스 속성 값을 추가한다.
+  entries.forEach((entrie) => {
+    // 요소가 관찰되지 않을 경우 아무런 조치를 취하지 않는다.
+    if (!entrie.isIntersecting) {
+      return;
+    }
+
+    const { target } = entrie;
+    target.classList.add("show");
+  });
+});
+
+const infoEls = document.querySelectorAll(".info");
+
+infoEls.forEach((element) => {
+  io.observe(element);
+});
