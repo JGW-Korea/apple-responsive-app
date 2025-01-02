@@ -106,3 +106,23 @@ searchShadowEl.addEventListener("click", () => {
 
   searchInputEl.value = "";
 });
+
+// Sprite Image 애니메이션을 위한 background-position 값 계산
+let [x, y] = [0, 0];
+let frames = "";
+
+for (let i = 0; i < 60; i++) {
+  frames += `${((100 / 60) * i).toFixed(
+    2
+  )}% { background-position: ${x}px, ${y}px }`;
+
+  // x 좌표 값이 Sprite Image의 마지막 위치에 도달할 경우
+  if (x <= -500) {
+    x = 0; // x 위치를 0으로 수정
+    y -= 100; // y 위치를 100으로 수정
+    continue;
+  }
+
+  // x 좌표를 계속 움직인다.
+  x -= 100;
+}
