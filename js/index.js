@@ -146,3 +146,20 @@ const infoEls = document.querySelectorAll(".info");
 infoEls.forEach((element) => {
   io.observe(element);
 });
+
+// Video Tag - Controller
+const videoEl = document.querySelector(".stage video");
+const playerBtn = document.querySelector(".stage .controller-player");
+const pauseBtn = document.querySelector(".stage .controller-pause");
+
+playerBtn.addEventListener("click", () => {
+  videoEl.play();
+  playerBtn.classList.add("hide");
+  pauseBtn.classList.remove("hide");
+});
+
+pauseBtn.addEventListener("click", () => {
+  videoEl.pause();
+  playerBtn.classList.remove("hide");
+  pauseBtn.classList.add("hide");
+});
