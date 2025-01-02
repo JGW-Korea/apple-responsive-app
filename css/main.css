@@ -19,8 +19,6 @@ html.fixed {
 }
 
 body {
-  /* height: 10000px; */
-
   /* Font 관련 CSS 속성은 상속이 되기 떄문에 Font 속성을 정의한다. */
   font-family: "Roboto", "Noto Sans KR", sans-serif;
   font-size: 16px;
@@ -669,6 +667,47 @@ nav .menu li.active a:hover {
   height: 46px;
   background-image: url("../assets/images/power_create_caption.png");
   transform: translate(543px, 908px);
+}
+
+/* Display Section */
+.display {
+  margin-top: 450px;
+}
+
+/* Display / Notes */
+.display .notes h1 {
+  width: 630px;
+  height: 370px;
+  background-image: url("../assets/images/display_headline.png");
+  transform: translate(104px, 0);
+}
+
+.display .notes .figures {
+  height: 814px;
+  margin-top: 26px;
+}
+
+.display .notes figcaption {
+  width: 145px;
+  height: 45px;
+  background-image: url("../assets/images/display_notes_caption.png");
+  transform: translate(707px, -16px);
+}
+
+/* Display / Shareplay */
+.display .shareplay .figures {
+  height: 630px;
+}
+
+.display .shareplay figure {
+  transform: translate(-360px, 0);
+}
+
+.display .shareplay figcaption {
+  width: 110px;
+  height: 48px;
+  background-image: url("../assets/images/display_shareplay_caption.png");
+  transform: translate(300px, 658px);
 }
 
 @keyframes sprite-icon {
