@@ -890,6 +890,65 @@ nav .menu li.active a:hover {
   justify-content: space-around;
 }
 
+.ipados {
+  margin-top: 212px;
+}
+
+.ipados h1 {
+  width: 530px;
+  height: 400px;
+  background-image: url("../assets/images/ipados_headline.png");
+  margin: 0 auto;
+}
+
+.ipados .infos {
+  margin-top: 44px;
+  align-items: flex-end;
+}
+
+.ipados .figures {
+  display: flex;
+  height: 782px;
+}
+
+.ipados .figures > div {
+  flex-grow: 1;
+  position: relative;
+}
+
+.ipados .figures .figure-split-view figure {
+  transform: translate(-205px, -312px);
+}
+
+.ipados .figures .figure-split-view figcaption {
+  width: 163px;
+  height: 53px;
+  background-image: url("../assets/images/ipados_split_view_caption.png");
+  transform: translate(200px, -38px);
+}
+
+.ipados .figures .figure-widgets figure {
+  transform: translate(237px, 43px);
+}
+
+.ipados .figures .figure-widgets figcaption {
+  width: 161px;
+  height: 46px;
+  background-image: url("../assets/images/ipados_widgets_caption.png");
+  transform: translate(257px, 497px);
+}
+
+.ipados .figures .figure-quick-note figure {
+  transform: translate(-625px, 232px);
+}
+
+.ipados .figures .figure-quick-note figcaption {
+  width: 82px;
+  height: 97px;
+  background-image: url("../assets/images/ipados_quick_note_caption.png");
+  transform: translate(511px, 470px);
+}
+
 @keyframes sprite-icon {
   /* 1~10 */
   0.00% {
