@@ -1129,6 +1129,42 @@ nav .menu li.active a:hover {
   transform: translate(470px, -620px);
 }
 
+/* AR Section */
+.ar {
+  background-color: var(--color-section);
+  padding: 20px 20px 0;
+}
+
+.ar .whitebox {
+  padding-bottom: 0;
+}
+
+.ar .inner {
+  display: flex;
+}
+
+.ar .inner > div {
+  max-width: 410px;
+  margin-top: 60px;
+  margin-right: 90px;
+}
+
+/* Enviroment Section */
+.enviroment {
+  padding: 20px 20px 0;
+  background-color: var(--color-section);
+  text-align: center;
+}
+
+.enviroment .icon {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.enviroment h1 {
+  color: #03a10e;
+}
+
 @keyframes sprite-icon {
   /* 1~10 */
   0.00% {
