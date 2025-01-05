@@ -260,3 +260,6 @@ navigations.forEach((nav) => {
 
   navigationsEl.appendChild(mapEl);
 });
+
+const thisYearEl = document.querySelector("footer .this-year");
+thisYearEl.textContent = new Date().getFullYear();
