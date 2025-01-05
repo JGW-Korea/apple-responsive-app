@@ -1,3 +1,5 @@
+import ipads from "../assets/data/ipads.js";
+
 // Element 조작 클래스
 class ElementOperation {
   constructor(el) {
@@ -162,4 +164,72 @@ pauseBtn.addEventListener("click", () => {
   videoEl.pause();
   playerBtn.classList.remove("hide");
   pauseBtn.classList.add("hide");
+});
+
+// iPad Compare Data -> 요소 생성
+const itemsEl = document.querySelector("section.compare .items");
+ipads.forEach((ipad) => {
+  // #1. item div 태그 생성
+  const $itemEl = document.createElement("div");
+  $itemEl.classList.add("item");
+
+  // #2. thumbnail div 태그 생성
+  const $thimbnail = document.createElement("div");
+  $thimbnail.classList.add("thumbnail");
+
+  const $thimbnailImage = document.createElement("img");
+  $thimbnailImage.src = ipad.thumbnail;
+  $thimbnailImage.alt = ipad.name;
+
+  $thimbnail.appendChild($thimbnailImage);
+
+  // #3. colors ul 태그 생성
+  const $colorsUl = document.createElement("ul");
+  $colorsUl.classList.add("colors");
+
+  // #3-1. color li 태그 생성
+  ipad.colors.forEach((color) => {
+    const $colorList = document.createElement("li");
+    $colorList.style.backgroundColor = color;
+
+    $colorsUl.appendChild($colorList);
+  });
+
+  // #4. header 태그 생성
+  const $productHeader = document.createElement("h3");
+  $productHeader.classList.add("name");
+  $productHeader.textContent = ipad.name;
+
+  // #5. Tagline P 태그 생성
+  const $taglineP = document.createElement("p");
+  $taglineP.classList.add("tagline");
+  $taglineP.innerHTML = ipad.tagline;
+
+  // #6. Price p 태그 생성
+  const $priceP = document.createElement("p");
+  $priceP.classList.add("price");
+  $priceP.textContent = `₩${ipad.price}부터`;
+
+  // #7 버튼 생성
+  const $btn = document.createElement("button");
+  $btn.classList.add("btn");
+  $btn.textContent = "구입하기";
+
+  // #8. hreflink 생성
+  const $a = document.createElement("a");
+  $a.href = ipad.url;
+  $a.textContent = "더 알아보기";
+  $a.classList.add("link");
+
+  $itemEl.append(
+    $thimbnail,
+    $colorsUl,
+    $productHeader,
+    $taglineP,
+    $priceP,
+    $btn,
+    $a
+  );
+
+  itemsEl.appendChild($itemEl);
 });
