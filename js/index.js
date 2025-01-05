@@ -1,4 +1,5 @@
 import ipads from "../assets/data/ipads.js";
+import navigations from "../assets/data/navigations.js";
 
 // Element 조작 클래스
 class ElementOperation {
@@ -232,4 +233,30 @@ ipads.forEach((ipad) => {
   );
 
   itemsEl.appendChild($itemEl);
+});
+
+// Navigates Data -> 요소 생성
+const navigationsEl = document.querySelector("footer .navigations");
+navigations.forEach((nav) => {
+  const mapEl = document.createElement("div");
+  mapEl.classList.add("map");
+
+  let mapList = "";
+  nav.maps.forEach((map) => {
+    mapList += /* html */ `<li>
+      <a href="${map.url}">${map.name}</a>
+    </li>`;
+  });
+
+  mapEl.innerHTML = /* html */ `
+    <h3>
+      <span class="text">${nav.title}</span>
+      <!-- <span class="icon">+</span> -->
+    </h3>
+    <ul>
+      ${mapList}
+    </ul>
+  `;
+
+  navigationsEl.appendChild(mapEl);
 });
