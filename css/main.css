@@ -1050,6 +1050,8 @@ nav .menu li.active a:hover {
 .privacy .infos {
   margin-top: 38px;
   align-items: flex-end;
+  position: relative;
+  z-index: 1;
 }
 
 .privacy figure {
@@ -1068,6 +1070,27 @@ nav .menu li.active a:hover {
   height: 31px;
   background-image: url("../assets/images/privacy_caption_touch_id.png");
   transform: translate(533px, 485px);
+}
+
+/* Accessibility Section */
+.accessibility {
+  margin-top: 266px;
+  margin-bottom: 170px;
+}
+
+.accessibility h1 {
+  width: 384px;
+  height: 270px;
+  background-image: url("../assets/images/accessibility_headline.png");
+  /* transform: translate(); */
+}
+
+.accessibility .infos {
+  margin-top: 20px;
+}
+
+.accessibility figure {
+  transform: translate(470px, -620px);
 }
 
 @keyframes sprite-icon {
