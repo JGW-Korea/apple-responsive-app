@@ -208,7 +208,7 @@ ipads.forEach((ipad) => {
   // #6. Price p 태그 생성
   const $priceP = document.createElement("p");
   $priceP.classList.add("price");
-  $priceP.textContent = `₩${ipad.price}부터`;
+  $priceP.textContent = `₩${ipad.price.toLocaleString("en-US")}부터`;
 
   // #7 버튼 생성
   const $btn = document.createElement("button");
