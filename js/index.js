@@ -82,7 +82,9 @@ searchStarterEl.addEventListener("click", () => {
   }, 600);
 });
 
-searchCloserEl.addEventListener("click", () => {
+searchCloserEl.addEventListener("click", (event) => {
+  event.stopPropagation();
+
   headerOperation.hideElement("searching");
   document.documentElement.classList.remove("fixed");
   headerMenuEls.forEach((element, idx) => {
@@ -123,12 +125,35 @@ const menuStarterEl = document.querySelector("header .menu .menu-starter");
 menuStarterEl.addEventListener("click", () => {
   if (headerEl.classList.contains("menuing")) {
     headerEl.classList.remove("menuing");
+    searchInputEl.value = "";
     playScroll();
     return;
   }
 
   headerEl.classList.add("menuing");
   stopScroll();
+});
+
+// Header Menu - Search Click Event
+const searchTextFieldEl = document.querySelector("header .textfield");
+const searchCancelerdEl = document.querySelector("header .search-canceler");
+
+searchTextFieldEl.addEventListener("click", () => {
+  headerEl.classList.add("searching--mobile");
+  searchInputEl.focus();
+});
+
+searchCancelerdEl.addEventListener("click", () => {
+  headerEl.classList.remove("searching--mobile");
+});
+
+// 화면의 크기에 따라 불필요한 클래스 제거
+window.addEventListener("resize", () => {
+  if (window.innerWidth <= 740) {
+    headerEl.classList.remove("searching");
+  } else {
+    headerEl.classList.remove("searching--mobile");
+  }
 });
 
 // Sprite Image 애니메이션을 위한 background-position 값 계산
