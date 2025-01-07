@@ -110,6 +110,27 @@ searchShadowEl.addEventListener("click", () => {
   searchInputEl.value = "";
 });
 
+// Header Menu 토글
+function playScroll() {
+  document.documentElement.classList.remove("fixed");
+}
+
+function stopScroll() {
+  document.documentElement.classList.add("fixed");
+}
+
+const menuStarterEl = document.querySelector("header .menu .menu-starter");
+menuStarterEl.addEventListener("click", () => {
+  if (headerEl.classList.contains("menuing")) {
+    headerEl.classList.remove("menuing");
+    playScroll();
+    return;
+  }
+
+  headerEl.classList.add("menuing");
+  stopScroll();
+});
+
 // Sprite Image 애니메이션을 위한 background-position 값 계산
 let [x, y] = [0, 0];
 let frames = "";
