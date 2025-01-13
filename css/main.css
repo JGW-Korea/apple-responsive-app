@@ -583,8 +583,189 @@ header.searching .search .autocompletes li {
   transition-delay: 0.2s;
 }
 
+/* Header - Tablit Style */
+@media (max-width: 1000px) {
+  header .inner {
+    padding: 0 10px;
+  }
+}
+
+/* Header - Mobile Style */
+@media (max-width: 740px) {
+  header::before {
+    content: "";
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    width: 100%;
+    height: 0;
+    background-color: var(--color-header);
+    transition: 0.4s;
+  }
+
+  header ul.menu > li {
+    display: none;
+  }
+
+  header ul.menu > li.menu-starter,
+  header ul.menu > li.apple-logo,
+  header ul.menu > li.basket-starter {
+    display: flex;
+  }
+
+  header ul.menu > li.menu-starter {
+    cursor: pointer;
+  }
+
+  header ul.menu > li.menu-starter span {
+    display: block;
+    width: 15px;
+    height: 1px;
+    background-color: var(--color-white);
+    margin-bottom: 6px;
+    transition: 0.4s;
+  }
+
+  header ul.menu > li.menu-starter span:last-child {
+    margin-bottom: 0;
+  }
+
+  header .search-wrap {
+    padding: 0 20px 14px;
+    border-bottom: 1px solid var(--color-header);
+    box-sizing: border-box;
+    top: var(--header-height);
+  }
+
+  header .search {
+    max-width: 590px;
+  }
+
+  header .shadow {
+    display: none;
+  }
+
+  header .search .textfield {
+    border-radius: 10px;
+    background-color: #1d1d1d;
+    width: 100%;
+    transition: 0.2s;
+  }
+
+  header .search .search-closer {
+    display: none;
+  }
+
+  header .search .search-canceler {
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    padding: 0 8px;
+    color: var(--color-link);
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: 0.4s;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  header .search .autocompletes {
+    top: 58px;
+    padding: 26px 0 20px;
+    background-color: transparent;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+    transform: 0, -100px;
+  }
+
+  header .search .autocompletes ul li {
+    border-bottom: 1px solid var(--color-header);
+  }
+
+  header .search .autocompletes ul li:last-child {
+    border-bottom: none;
+  }
+
+  header .search .autocompletes ul li a {
+    padding: 16px 0 16px 16px;
+    color: var(--color-font-middlegray);
+  }
+
+  header .search .autocompletes ul li:hover a {
+    background-color: transparent;
+  }
+
+  header .search input,
+  header .search .search-icon,
+  header .search .autocompletes h3,
+  header .search .autocompletes li {
+    transform: translateX(0);
+  }
+
+  header.menuing {
+    background-color: var(--color-black);
+  }
+
+  header.menuing::before {
+    height: 100vh;
+    background-color: var(--color-black);
+  }
+
+  header.menuing ul.menu > li.basket-starter {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  header.menuing ul.menu > li.menu-starter span:first-child {
+    transform: translate(0, 3.5px) rotate(45deg);
+  }
+
+  header.menuing ul.menu > li.menu-starter span:last-child {
+    transform: translate(0, -3.5px) rotate(-45deg);
+  }
+
+  header.menuing .search-wrap {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  header.menuing .clone-menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+
+  header.menuing.searching--mobile {
+    transform: translate(0, -30px);
+  }
+
+  header.menuing.searching--mobile .search .textfield {
+    width: calc(100% - 55px);
+  }
+
+  header.menuing.searching--mobile .search .autocompletes {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+
+  header.menuing.searching--mobile .search .search-canceler {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  header.menuing.searching--mobile .clone-menu {
+    visibility: hidden;
+    opacity: 0;
+    transform: translate(0, 100px);
+  }
+}
+
 /* Navigation */
 nav {
+  --nav-height: 52px;
   background-color: rgba(255, 255, 255, 0.7);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--color-border);
@@ -595,7 +776,7 @@ nav {
 
 nav .inner {
   max-width: 1000px;
-  height: 52px;
+  height: var(--nav-height);
   display: flex;
   align-items: center;
 }
@@ -629,6 +810,116 @@ nav .menu li.active a {
 
 nav .menu li.active a:hover {
   color: inherit;
+}
+
+@media (max-width: 740px) {
+  nav .shadow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color-shadow);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.4s;
+  }
+
+  nav .contents-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--nav-height);
+    border-bottom: 1px solid var(--color-border);
+    background-color: var(--color-white);
+    visibility: hidden;
+    transition: 0.4s;
+  }
+  nav .menu-toggler {
+    width: 30px;
+    height: 24px;
+    margin-right: 10px;
+    cursor: pointer;
+    position: relative;
+  }
+
+  nav .menu-toggler::before,
+  nav .menu-toggler::after {
+    content: "";
+    display: block;
+    width: 11px;
+    height: 1px;
+    background-color: var(--color-font-darkgray);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transition: 0.4s;
+  }
+
+  nav .menu-toggler::before {
+    transform: rotate(40deg);
+    left: -9px;
+  }
+
+  nav .menu-toggler::after {
+    transform: rotate(-40deg);
+    right: -9px;
+  }
+
+  nav .menu {
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    width: 100%;
+    padding: 10px 40px 30px;
+    box-sizing: border-box;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transform: translate(0, -50px);
+    transition: 0.4s;
+  }
+
+  nav .menu li {
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  nav .menu li:last-child {
+    border-bottom: none;
+  }
+
+  nav .menu li a {
+    padding: 16px 0;
+    font-size: 14px;
+  }
+
+  nav.menuing .shadow {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  nav.menuing .contents-bg {
+    visibility: visible;
+    height: 232px;
+  }
+
+  nav.menuing .menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+
+  nav.menuing .menu-toggler::before {
+    transform: rotate(-40deg);
+  }
+
+  nav.menuing .menu-toggler::after {
+    transform: rotate(40deg);
+  }
 }
 
 /* Main Section */
@@ -1488,186 +1779,6 @@ footer .legal ul li:last-child::after {
 
 footer .legal ul li:hover a {
   text-decoration: underline;
-}
-
-/* Tablit Style */
-@media (max-width: 1000px) {
-  header .inner {
-    padding: 0 10px;
-  }
-}
-
-/* Mobile Style */
-@media (max-width: 740px) {
-  header::before {
-    content: "";
-    position: fixed;
-    top: var(--header-height);
-    left: 0;
-    width: 100%;
-    height: 0;
-    background-color: var(--color-header);
-    transition: 0.4s;
-  }
-
-  header ul.menu > li {
-    display: none;
-  }
-
-  header ul.menu > li.menu-starter,
-  header ul.menu > li.apple-logo,
-  header ul.menu > li.basket-starter {
-    display: flex;
-  }
-
-  header ul.menu > li.menu-starter {
-    cursor: pointer;
-  }
-
-  header ul.menu > li.menu-starter span {
-    display: block;
-    width: 15px;
-    height: 1px;
-    background-color: var(--color-white);
-    margin-bottom: 6px;
-    transition: 0.4s;
-  }
-
-  header ul.menu > li.menu-starter span:last-child {
-    margin-bottom: 0;
-  }
-
-  header .search-wrap {
-    padding: 0 20px 14px;
-    border-bottom: 1px solid var(--color-header);
-    box-sizing: border-box;
-    top: var(--header-height);
-  }
-
-  header .search {
-    max-width: 590px;
-  }
-
-  header .shadow {
-    display: none;
-  }
-
-  header .search .textfield {
-    border-radius: 10px;
-    background-color: #1d1d1d;
-    width: 100%;
-    transition: 0.2s;
-  }
-
-  header .search .search-closer {
-    display: none;
-  }
-
-  header .search .search-canceler {
-    height: var(--header-height);
-    display: flex;
-    align-items: center;
-    padding: 0 8px;
-    color: var(--color-link);
-    position: absolute;
-    top: 0;
-    right: 0;
-    transition: 0.4s;
-    visibility: hidden;
-    opacity: 0;
-  }
-
-  header .search .autocompletes {
-    top: 58px;
-    padding: 26px 0 20px;
-    background-color: transparent;
-    visibility: hidden;
-    opacity: 0;
-    transition: 0.3s;
-    transform: 0, -100px;
-  }
-
-  header .search .autocompletes ul li {
-    border-bottom: 1px solid var(--color-header);
-  }
-
-  header .search .autocompletes ul li:last-child {
-    border-bottom: none;
-  }
-
-  header .search .autocompletes ul li a {
-    padding: 16px 0 16px 16px;
-    color: var(--color-font-middlegray);
-  }
-
-  header .search .autocompletes ul li:hover a {
-    background-color: transparent;
-  }
-
-  header .search input,
-  header .search .search-icon,
-  header .search .autocompletes h3,
-  header .search .autocompletes li {
-    transform: translateX(0);
-  }
-
-  header.menuing {
-    background-color: var(--color-black);
-  }
-
-  header.menuing::before {
-    height: 100vh;
-    background-color: var(--color-black);
-  }
-
-  header.menuing ul.menu > li.basket-starter {
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  header.menuing ul.menu > li.menu-starter span:first-child {
-    transform: translate(0, 3.5px) rotate(45deg);
-  }
-
-  header.menuing ul.menu > li.menu-starter span:last-child {
-    transform: translate(0, -3.5px) rotate(-45deg);
-  }
-
-  header.menuing .search-wrap {
-    visibility: visible;
-    opacity: 1;
-  }
-
-  header.menuing .clone-menu {
-    visibility: visible;
-    opacity: 1;
-    transform: translate(0, 0);
-  }
-
-  header.menuing.searching--mobile {
-    transform: translate(0, -30px);
-  }
-
-  header.menuing.searching--mobile .search .textfield {
-    width: calc(100% - 55px);
-  }
-
-  header.menuing.searching--mobile .search .autocompletes {
-    visibility: visible;
-    opacity: 1;
-    transform: translate(0, 0);
-  }
-
-  header.menuing.searching--mobile .search .search-canceler {
-    visibility: visible;
-    opacity: 1;
-  }
-
-  header.menuing.searching--mobile .clone-menu {
-    visibility: hidden;
-    opacity: 0;
-    transform: translate(0, 100px);
-  }
 }
 
 @keyframes sprite-icon {

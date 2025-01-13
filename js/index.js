@@ -176,6 +176,29 @@ for (let i = 0; i < 60; i++) {
   x -= 100;
 }
 
+// 뷰포트의 크기가 740px 이하일 경우 슬라이드 리스트 기능
+const navEl = document.querySelector("nav");
+const navMenuToggleEl = navEl.querySelector(".menu-toggler");
+const navMenuShadowEl = navEl.querySelector(".shadow");
+
+navMenuToggleEl.addEventListener("click", () => {
+  if (navEl.classList.contains("menuing")) {
+    navEl.classList.remove("menuing");
+    return;
+  }
+
+  navEl.classList.add("menuing");
+});
+navEl.addEventListener("click", (event) => {
+  event.stopPropagation();
+});
+navMenuShadowEl.addEventListener("click", () => {
+  navEl.classList.remove("menuing");
+});
+window.addEventListener("click", () => {
+  navEl.classList.remove("menuing");
+});
+
 // Product 상품의 요소인 info가 가시성이 true일 때 보여짐 제어
 const io = new IntersectionObserver((entries) => {
   // 관찰한 요소가 뷰포트에 노출되었을 경우에 show 클래스 속성 값을 추가한다.
