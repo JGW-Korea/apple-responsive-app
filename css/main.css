@@ -356,6 +356,26 @@ a.link::after {
   margin-top: 26px;
 }
 
+@media (max-width: 1000px) {
+  .whitebox {
+    padding: 60px 30px;
+  }
+
+  .whitebox .icon {
+    width: 44px;
+  }
+
+  .whitebox h1 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 740px) {
+  .whitebox p {
+    font-size: 17px;
+  }
+}
+
 /* Header */
 header {
   --header-height: 44px;
@@ -2492,7 +2512,6 @@ main {
   }
 
   .accessibility h1 {
-    width: 287px;
     height: 165px;
     margin: 0 auto;
   }
@@ -2528,6 +2547,29 @@ main {
   max-width: 410px;
   margin-top: 60px;
   margin-right: 90px;
+}
+
+@media (max-width: 1000px) {
+  .ar .image {
+    width: 258px;
+  }
+}
+
+@media (max-width: 740px) {
+  .ar .inner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ar .inner > div {
+    max-width: none;
+    margin: 0 0 30px;
+    text-align: center;
+  }
+
+  .ar .icon {
+    margin: 0 auto 20px;
+  }
 }
 
 /* Enviroment Section */
