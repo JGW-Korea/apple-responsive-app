@@ -2391,6 +2391,55 @@ main {
   transform: translate(533px, 485px);
 }
 
+@media (max-width: 1000px) {
+  .privacy {
+    margin-top: 120px;
+  }
+
+  .privacy h1 {
+    width: 368px;
+    height: 182px;
+    transform: translate(70px, 0);
+  }
+
+  .privacy .infos {
+    margin-top: 24px;
+  }
+
+  .privacy .figures figure {
+    transform: translate(-18px, -440px);
+  }
+
+  .privacy .figures figure img {
+    width: 441px;
+  }
+
+  .privacy .figures figure figcaption .caption-apple-id {
+    transform: scale(0.8) translate(-22px, -18px);
+  }
+
+  .privacy .figures figure figcaption .caption-touch-id {
+    transform: scale(0.8) translate(293px, 339px);
+  }
+}
+
+@media (max-width: 740px) {
+  .privacy h1 {
+    width: 277px;
+    height: 136px;
+    transform: none;
+    margin: 0 auto;
+  }
+
+  .privacy .figures {
+    margin-top: 30px;
+  }
+
+  .privacy .figures figure {
+    transform: translate(20px, 0px);
+  }
+}
+
 /* Accessibility Section */
 .accessibility {
   margin-top: 266px;
