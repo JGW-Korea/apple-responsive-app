@@ -320,7 +320,7 @@ navigations.forEach((nav) => {
   mapEl.innerHTML = /* html */ `
     <h3>
       <span class="text">${nav.title}</span>
-      <!-- <span class="icon">+</span> -->
+      <span class="icon">+</span>
     </h3>
     <ul>
       ${mapList}
@@ -332,3 +332,12 @@ navigations.forEach((nav) => {
 
 const thisYearEl = document.querySelector("footer .this-year");
 thisYearEl.textContent = new Date().getFullYear();
+
+// Map Element 클릭 이벤트
+const mapEls = document.querySelectorAll("footer .navigations .map");
+mapEls.forEach((element) => {
+  const h3El = element.querySelector("h3");
+  h3El.addEventListener("click", () => {
+    element.classList.toggle("active");
+  });
+});
